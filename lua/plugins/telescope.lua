@@ -6,6 +6,7 @@ return {
       'nvim-lua/plenary.nvim',
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
       { 'nvim-tree/nvim-web-devicons',              enabled = vim.g.have_nerd_font },
+      { 'nvim-telescope/telescope-ui-select.nvim' },
     },
     config = function()
       require('telescope').setup {
@@ -17,7 +18,8 @@ return {
         }
       }
 
-      require('telescope').load_extension('fzf')
+      pcall(require('telescope').load_extension, 'fzf')
+      pcall(require('telescope').load_extension, 'ui-select')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'

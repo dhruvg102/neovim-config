@@ -5,6 +5,8 @@ vim.g.have_nerd_font = true
 
 local opt = vim.opt -- for conciseness
 
+opt.signcolumn = 'yes'
+
 --line numbers
 opt.number = true
 opt.relativenumber = true
@@ -27,7 +29,7 @@ opt.cursorline = true -- highlight the current cursor line
 
 -- colorscheme option
 opt.termguicolors = true
-opt.background = "dark"
+opt.background = "light"
 opt.signcolumn = "yes" -- show sign columns so that text doesnt shift
 
 -- Minimal number of screen lines to keep above and below the cursor.
