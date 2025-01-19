@@ -1,10 +1,9 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 
 local opt = vim.opt -- for conciseness
-
 opt.signcolumn = 'yes'
 
 --line numbers
@@ -97,7 +96,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-
-vim.cmd("let g:netrw_liststyle = 3")
 
 require("config.lazy")
