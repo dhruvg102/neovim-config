@@ -48,6 +48,12 @@ if vim.fn.has('wsl') == 1 then
   })
 end
 
+-- Normal mode: pressing x will delete the character into the blackhole register
+vim.keymap.set("n", "x", "\"_x", { desc = "Delete char without affecting clipboard" })
+
+-- Optional: If you also want X (uppercase) in NORMAL mode to do the same:
+vim.keymap.set("n", "X", "\"_X", { desc = "Delete char to left without affecting clipboard" })
+
 -- Save Undo History
 opt.undofile = true
 
