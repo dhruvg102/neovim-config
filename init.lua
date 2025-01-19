@@ -38,7 +38,15 @@ vim.opt.scrolloff = 10
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
 --clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+opt.clipboard = "unnamedplus" -- use system clipboard as default register
+if vim.fn.has('wsl') == 1 then
+  vim.api.nvim_create_autocmd('TextYankPost', {
+    group = vim.api.nvim_create_augroup('Yank', { clear = true }),
+    callback = function()
+      vim.fn.system("clip.exe", vim.fn.getreg('"'))
+    end,
+  })
+end
 
 -- Save Undo History
 opt.undofile = true
