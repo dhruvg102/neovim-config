@@ -34,6 +34,7 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      { 'roobert/tailwindcss-colorizer-cmp.nvim', opts = {} },
     },
     config = function()
       -- See `:help cmp`
@@ -100,6 +101,11 @@ return {
 
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
+        },
+        formatting = {
+          format = function(entry, item)
+            return require('tailwindcss-colorizer-cmp').formatter(entry, item)
+          end,
         },
         sources = {
           {
