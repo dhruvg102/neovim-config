@@ -2,8 +2,8 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    config = function () 
-      require'nvim-treesitter.configs'.setup {
+    config = function()
+      require 'nvim-treesitter.configs'.setup {
         -- A list of parser names, or "all" (the listed parsers MUST always be installed)
         ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
 
@@ -23,7 +23,17 @@ return {
 
           additional_vim_regex_highlighting = false,
         },
+        indent = { enable = true },
       }
     end
+  },
+  {
+    'windwp/nvim-ts-autotag',
+    opts = {},
+  },
+  {
+    "folke/ts-comments.nvim",
+    opts = {},
+    event = "VeryLazy",
   }
 }

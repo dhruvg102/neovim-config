@@ -28,7 +28,7 @@ opt.cursorline = true -- highlight the current cursor line
 
 -- colorscheme option
 opt.termguicolors = true
-opt.background = "light"
+opt.background = "dark"
 opt.signcolumn = "yes" -- show sign columns so that text doesnt shift
 
 -- Minimal number of screen lines to keep above and below the cursor.
