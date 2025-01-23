@@ -3,6 +3,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     config = function()
+      ---@diagnostic disable: missing-fields
       require 'nvim-treesitter.configs'.setup {
         -- A list of parser names, or "all" (the listed parsers MUST always be installed)
         ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
@@ -21,20 +22,33 @@ return {
               return true
             end
           end,
-
           additional_vim_regex_highlighting = false,
         },
         indent = { enable = true },
+        autopairs = {
+          enable = true,
+        },
+        autotag = {
+          enable = true
+        },
       }
     end
   },
   {
-    'windwp/nvim-ts-autotag',
-    opts = {},
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      local tsc = require("treesitter-context")
+
+      tsc.setup({
+        max_lines = 2,
+        enable = true,
+      })
+    end,
   },
   {
     "folke/ts-comments.nvim",
     opts = {},
     event = "VeryLazy",
-  }
+  },
 }
