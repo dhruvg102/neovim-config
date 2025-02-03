@@ -14,20 +14,14 @@ return {
       'hrsh7th/cmp-path',
       'onsails/lspkind.nvim',
       "windwp/nvim-ts-autotag",
-      "windwp/nvim-autopairs",
     },
     config = function()
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       local lspkind = require 'lspkind'
-      local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
 
-      require("nvim-autopairs").setup()
       require("nvim-ts-autotag").setup()
-      --
-      -- Integrate nvim-autopairs with cmp
-      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
       --Load snippets
       require("luasnip.loaders.from_vscode").lazy_load()
