@@ -4,7 +4,6 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
 local opt = vim.opt -- for conciseness
-opt.signcolumn = 'yes'
 
 --line numbers
 opt.number = true
@@ -66,4 +65,3 @@ opt.timeoutlen = 300
 -- split windows
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
-

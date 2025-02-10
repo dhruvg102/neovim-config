@@ -9,16 +9,17 @@ return {
       picker = { enabled = true },
     },
     keys = {
-      { "<leader><space>", function() Snacks.picker.smart() end,       desc = "Smart Find Files" },
-      { "<leader>sk",      function() Snacks.picker.keymaps() end,     desc = "Keymaps" },
-      { "<leader>sh",      function() Snacks.picker.help() end,        desc = "Help Pages" },
-      { "<leader>sw",      function() Snacks.picker.grep_word() end,   desc = "Visual selection or word", mode = { "n", "x" } },
-      { "<leader>sg",      function() Snacks.picker.grep() end,        desc = "Grep" },
-      { "<leader>sd",      function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
-      { "<leader>fg",      function() Snacks.picker.git_files() end,   desc = "Find Git Files" },
-      { "<leader>fp",      function() Snacks.picker.projects() end,    desc = "Projects" },
-      { "<leader>fb",      function() Snacks.picker.buffers() end,     desc = "Buffers" },
-      { "<leader>fr",      function() Snacks.picker.recent() end,      desc = "Recent" },
+      { "<leader><space>", function() Snacks.picker.smart() end,                                   desc = "Smart Find Files" },
+      { "<leader>sk",      function() Snacks.picker.keymaps() end,                                 desc = "Keymaps" },
+      { "<leader>sh",      function() Snacks.picker.help() end,                                    desc = "Help Pages" },
+      { "<leader>sw",      function() Snacks.picker.grep_word() end,                               desc = "Visual selection or word", mode = { "n", "x" } },
+      { "<leader>sg",      function() Snacks.picker.grep() end,                                    desc = "Grep" },
+      { "<leader>sd",      function() Snacks.picker.diagnostics() end,                             desc = "Diagnostics" },
+      { "<leader>fg",      function() Snacks.picker.git_files() end,                               desc = "Find Git Files" },
+      { "<leader>fp",      function() Snacks.picker.projects() end,                                desc = "Projects" },
+      { "<leader>fb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
+      { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent" },
+      { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
 
     },
   },
@@ -29,12 +30,12 @@ return {
         preset = {
           header = [[
 
-██╗  ██╗██╗███████╗██████╗  ██████╗ ████████╗███████╗ ██████╗██╗  ██╗
-██║  ██║██║██╔════╝██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔════╝██║  ██║
-███████║██║█████╗  ██████╔╝██║   ██║   ██║   █████╗  ██║     ███████║
-██╔══██║██║██╔══╝  ██╔══██╗██║   ██║   ██║   ██╔══╝  ██║     ██╔══██║
-██║  ██║██║██║     ██║  ██║╚██████╔╝   ██║   ███████╗╚██████╗██║  ██║
-╚═╝  ╚═╝╚═╝╚═╝     ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝
+   ██╗  ██╗██╗███████╗██████╗  ██████╗ ████████╗███████╗ ██████╗██╗  ██╗
+   ██║  ██║██║██╔════╝██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔════╝██║  ██║
+   ███████║██║█████╗  ██████╔╝██║   ██║   ██║   █████╗  ██║     ███████║
+   ██╔══██║██║██╔══╝  ██╔══██╗██║   ██║   ██║   ██╔══╝  ██║     ██╔══██║
+   ██║  ██║██║██║     ██║  ██║╚██████╔╝   ██║   ███████╗╚██████╗██║  ██║
+   ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝
 
           ]],
           ---@type snacks.dashboard.Item[]
