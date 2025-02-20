@@ -38,9 +38,9 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 
 --clipboard
 opt.clipboard = "unnamedplus" -- use system clipboard as default register
-if vim.fn.has('wsl') == 1 then
-  vim.api.nvim_create_autocmd('TextYankPost', {
-    group = vim.api.nvim_create_augroup('Yank', { clear = true }),
+if vim.fn.has("wsl") == 1 then
+  vim.api.nvim_create_autocmd("TextYankPost", {
+    group = vim.api.nvim_create_augroup("Yank", { clear = true }),
     callback = function()
       vim.fn.system("clip.exe", vim.fn.getreg('"'))
     end,
@@ -48,10 +48,10 @@ if vim.fn.has('wsl') == 1 then
 end
 
 -- Normal mode: pressing x will delete the character into the blackhole register
-vim.keymap.set("n", "x", "\"_x", { desc = "Delete char without affecting clipboard" })
-
+vim.keymap.set("n", "x", '"_x', { desc = "Delete char without affecting clipboard" })
 -- Optional: If you also want X (uppercase) in NORMAL mode to do the same:
-vim.keymap.set("n", "X", "\"_X", { desc = "Delete char to left without affecting clipboard" })
+vim.keymap.set("n", "X", '"_X', { desc = "Delete char to left without affecting clipboard" })
+vim.keymap.set("v", "x", '"_x', { desc = "Delete selection without affectinf clipboard" })
 
 -- Save Undo History
 opt.undofile = true
